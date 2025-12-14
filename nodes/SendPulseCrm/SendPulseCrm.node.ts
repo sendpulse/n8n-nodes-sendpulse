@@ -327,22 +327,6 @@ export class SendPulseCrm implements INodeType {
                     },
                 },
             },
-            // {
-            //     displayName: 'IDs',
-            //     name: 'ids',
-            //     type: 'number',
-            //     typeOptions: {
-            //         multipleValues: true,
-            //     },
-            //     default: '',
-            //     description: 'Contact IDs',
-            //     routing: {
-            //         send: {
-            //             type: 'body',
-            //             property: 'ids',
-            //         },
-            //     },
-            // },
             {
                 displayName: 'Pipeline IDs',
                 name: 'pipelineIds',
@@ -403,12 +387,26 @@ export class SendPulseCrm implements INodeType {
                 required: true,
                 displayOptions: {
                     show: {
-                        resource: ['pipeline', 'deal'],
-                        operation: ['get', 'create'],
+                        resource: ['pipeline',],
+                        operation: ['get'],
                     },
                 },
                 default: '',
                 description: 'The ID of the pipeline to retrieve',
+            },
+            {
+                displayName: 'Pipeline ID',
+                name: 'pipelineId',
+                type: 'number',
+                required: true,
+                displayOptions: {
+                    show: {
+                        resource: ['deal'],
+                        operation: ['create'],
+                    },
+                },
+                default: '',
+                description: 'The ID of the pipeline',
             },
             {
                 displayName: 'Step ID',
@@ -610,7 +608,7 @@ export class SendPulseCrm implements INodeType {
                         },
                     },
                     {
-                        displayName: 'Field Conditions', // TODO
+                        displayName: 'Field Conditions',
                         name: 'fieldValueConditions',
                         type: 'fixedCollection',
                         typeOptions: {
@@ -1409,9 +1407,6 @@ export class SendPulseCrm implements INodeType {
                                         displayName: 'Value',
                                         name: 'value',
                                         type: 'string',
-                                        // typeOptions: {
-                                        //     multipleValues: true,
-                                        // },
                                         default: '',
                                         description: 'Filter value',
                                     },
