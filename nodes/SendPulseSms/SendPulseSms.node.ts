@@ -164,23 +164,39 @@ export class SendPulseSms implements INodeType {
             {
                 displayName: 'Phone Numbers',
                 name: 'phones',
-                type: 'string',
-                required: true,
+                type: 'fixedCollection',
                 typeOptions: {
                     multipleValues: true,
                 },
+                required: true,
                 displayOptions: {
                     show: {
                         resource: ['phoneNumber'],
                         operation: ['addNumbers'],
                     },
                 },
-                default: '',
+                options: [
+                    {
+                        name: 'phoneNumbersList',
+                        displayName: 'Phone Numbers',
+                        values: [
+                            {
+                                displayName: 'Phone Number',
+                                name: 'phone',
+                                type: 'string',
+                                required: true,
+                                default: '',
+                            },
+                        ],
+                    },
+                ],
+                default: [],
                 description: 'List of phone numbers',
                 routing: {
                     send: {
                         type: 'body',
                         property: 'phones',
+                        value: '={{ $value.phoneNumbersList.map(({ phone }) => phone) }}',
                     },
                 },
             },
