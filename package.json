@@ -42,15 +42,16 @@
       "dist/credentials/SendPulseOAuth2Api.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/SendPulseEmail/SendPulseEmail.node.js",
-      "dist/nodes/SendPulseSmtp/SendPulseSmtp.node.js",
-      "dist/nodes/SendPulseCrm/SendPulseCrm.node.js",
-      "dist/nodes/SendPulseChatbots/SendPulseChatbots.node.js",
       "dist/nodes/SendPulseA360/SendPulseA360.node.js",
-      "dist/nodes/SendPulseSms/SendPulseSms.node.js",
-      "dist/nodes/SendPulseWebPush/SendPulseWebPush.node.js",
+      "dist/nodes/SendPulseChatbots/SendPulseChatbots.node.js",
+      "dist/nodes/SendPulseCrm/SendPulseCrm.node.js",
+      "dist/nodes/SendPulseEmail/SendPulseEmail.node.js",
+      "dist/nodes/SendPulseFileManager/SendPulseFileManager.node.js",
       "dist/nodes/SendPulsePopUps/SendPulsePopUps.node.js",
-      "dist/nodes/SendPulseFileManager/SendPulseFileManager.node.js"
+      "dist/nodes/SendPulseSms/SendPulseSms.node.js",
+      "dist/nodes/SendPulseSmtp/SendPulseSmtp.node.js",
+      "dist/nodes/SendPulseVerifier/SendPulseVerifier.node.ts",
+      "dist/nodes/SendPulseWebPush/SendPulseWebPush.node.js"
     ]
   },
   "devDependencies": {
