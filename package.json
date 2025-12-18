@@ -50,7 +50,7 @@
       "dist/nodes/SendPulsePopUps/SendPulsePopUps.node.js",
       "dist/nodes/SendPulseSms/SendPulseSms.node.js",
       "dist/nodes/SendPulseSmtp/SendPulseSmtp.node.js",
-      "dist/nodes/SendPulseVerifier/SendPulseVerifier.node.ts",
+      "dist/nodes/SendPulseVerifier/SendPulseVerifier.node.js",
       "dist/nodes/SendPulseWebPush/SendPulseWebPush.node.js"
     ]
   },
