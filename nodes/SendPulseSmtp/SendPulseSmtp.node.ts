@@ -136,7 +136,6 @@ export class SendPulseSmtp implements INodeType {
                                             name: '={{ $parameter.fromName }}',
                                             email: '={{ $parameter.fromEmail }}',
                                         },
-                                        to: '={{ $parameter.toRecipients.recipients }}',
                                         html: '={{ Buffer.from($parameter.htmlBody).toString("base64") }}',
                                         text: '={{ $parameter.textBody }}',
                                         template: {
@@ -144,8 +143,6 @@ export class SendPulseSmtp implements INodeType {
                                             variables: '={{Object.fromEntries($parameter.templateVariables.variables?.map(v => [v.name, v.value]) || [])}}',
                                         },
                                         auto_plain_text: '={{ $parameter.additionalFields.autoPlainText }}',
-                                        cc: '={{ $parameter.additionalFields.cc?.recipients }}',
-                                        bcc: '={{ $parameter.additionalFields.bcc?.recipients }}',
                                         attachments: '={{ Object.fromEntries($parameter.additionalFields.attachments?.attachmentsList?.map(a => [a.filename, a.data]) || []) }}',
                                         attachments_binary: '={{ Object.fromEntries($parameter.additionalFields.attachmentsBinary?.attachmentsList?.map(a => [a.filename, a.data]) || []) }}',
                                     },
@@ -268,12 +265,11 @@ export class SendPulseSmtp implements INodeType {
                 default: {},
                 placeholder: 'Add Recipient',
                 description: 'Email recipients',
-
                 routing: {
                     send: {
                         type: 'body',
                         property: 'email.to',
-                        value: '={{ $parameter.toRecipients.recipients }}',
+                        value: '={{ $value.recipients }}',
                     },
                 },
             },
@@ -609,7 +605,7 @@ export class SendPulseSmtp implements INodeType {
                             send: {
                                 type: 'body',
                                 property: 'email.bcc',
-                                value: '={{ $parameter.additionalOptions.bcc?.recipients }}',
+                                value: '={{ $value.recipients }}',
                             },
                         },
                     },
@@ -646,6 +642,13 @@ export class SendPulseSmtp implements INodeType {
                         default: {},
                         placeholder: 'Add CC',
                         description: 'CC recipients',
+                        routing: {
+                            send: {
+                                type: 'body',
+                                property: 'email.cc',
+                                value: '={{ $value.recipients }}',
+                            },
+                        },
                     },
                 ],
             },
