@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-base.SendPulseSms",
+  "node": "@sendpulse/n8n-nodes-sendpulse.SendPulseSms",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [

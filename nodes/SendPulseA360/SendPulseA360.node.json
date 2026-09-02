@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-base.SendPulseA360",
+  "node": "@sendpulse/n8n-nodes-sendpulse.SendPulseA360",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [

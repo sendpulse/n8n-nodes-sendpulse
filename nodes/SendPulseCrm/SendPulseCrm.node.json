@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-base.SendPulseCrm",
+  "node": "@sendpulse/n8n-nodes-sendpulse.SendPulseCrm",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [

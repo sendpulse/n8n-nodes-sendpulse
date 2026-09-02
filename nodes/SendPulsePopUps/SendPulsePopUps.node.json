@@ -1,5 +1,5 @@
 {
-  "node": "n8n-nodes-base.SendPulsePopUps",
+  "node": "@sendpulse/n8n-nodes-sendpulse.SendPulsePopUps",
   "nodeVersion": "1.0",
   "codexVersion": "1.0",
   "categories": [
